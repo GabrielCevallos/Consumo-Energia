@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consumo de Energia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="card">
+      <h1>Consumo Electrico Domiciliario</h1>
+      <p>Ingresa consumos mensuales (kWh), filtra pares, ordena y calcula promedio total.</p>
+
+      <form id="form-consumo" class="form">
+        <label for="consumo">Nuevo consumo (kWh)</label>
+        <div class="row">
+          <input id="consumo" type="number" min="0" step="1" required placeholder="Ej: 245" />
+          <button type="submit">Agregar</button>
+        </div>
+      </form>
+
+      <div class="controls">
+        <label><input type="checkbox" id="solo-pares" /> Solo pares</label>
+        <select id="orden">
+          <option value="asc">Ascendente</option>
+          <option value="desc">Descendente</option>
+        </select>
+      </div>
+
+      <div class="stats" id="stats">
+        <span>Promedio: 0.00</span>
+        <span>Total: 0</span>
+        <span>Registros: 0</span>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Consumo (kWh)</th>
+            <th>Creado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-consumos"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
